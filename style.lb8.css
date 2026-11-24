@@ -1,0 +1,769 @@
+/* ===== Змінні та базові стилі ===== */
+:root {
+  --green-dark: #2d5a3d;
+  --green: #4c9a63;
+  --green-light: #e8f3ea;
+  --bg: #fafcf9;
+  --text: #25322a;
+  --muted: #5f6f64;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(45, 90, 61, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+h1, h2, h3 {
+  color: var(--green-dark);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ===== Шапка (Flexbox) ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--green);
+  border-bottom-color: var(--green);
+}
+
+/* ===== Головний блок ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #d6ecda, #f1f8ee);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--green);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== Загальні правила (Flexbox) ===== */
+.rules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rule {
+  flex: 1 1 220px;
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.rule-icon {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.rule h3 {
+  margin-bottom: 8px;
+}
+
+.rule p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Картки рослин (CSS Grid) ===== */
+.plants-section {
+  background: var(--green-light);
+  padding: 48px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(45, 90, 61, 0.2);
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  font-size: 4rem;
+  background: linear-gradient(135deg, #c9e6cf, #e8f3ea);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.tags li {
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ===== Таблиця ===== */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  min-width: 520px;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+thead th {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--green-light);
+}
+
+tbody tr:hover {
+  background: #d6ecda;
+}
+
+.note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ===== Поради ===== */
+.tips {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+details {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+  padding: 14px 18px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+details p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ===== Підвал ===== */
+.site-footer {
+  background: var(--green-dark);
+  color: #d8eadd;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .toolbar input,
+  .toolbar select {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   Стилі для JavaScript-функцій
+   ===================================================== */
+
+/* ===== Темна тема ===== */
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  --bg: #121a15;
+  --text: #e3eee6;
+  --white: #1c2821;
+  --green-light: #1f2f26;
+  --muted: #a3b5a8;
+  --green-dark: #8fd3a2;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.dark .hero {
+  background: linear-gradient(135deg, #1b3326, #14231a);
+}
+
+.dark .card-img {
+  background: linear-gradient(135deg, #25402f, #1d3025);
+}
+
+.dark thead th,
+.dark .site-footer {
+  background: #2d5a3d;
+  color: #fff;
+}
+
+.dark tbody tr:hover {
+  background: #2a4033;
+}
+
+.dark .btn:hover {
+  background: #3a7d51;
+}
+
+.dark .toolbar input,
+.dark .toolbar select {
+  border-color: #3a5545;
+}
+
+.dark .bar {
+  background: #2c3a32;
+}
+
+/* ===== Кнопка теми ===== */
+.theme-btn {
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.theme-btn:hover {
+  background: var(--green);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== Листочки, що падають ===== */
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.leaves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  top: -10%;
+  user-select: none;
+  animation: leaf-fall linear infinite;
+}
+
+@keyframes leaf-fall {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(var(--sway)) rotate(180deg);
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 105%;
+    transform: translateX(calc(var(--sway) * -1)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ===== Пошук і фільтр ===== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 10px 16px;
+  min-width: 220px;
+  border: 2px solid #cfe3d3;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(76, 154, 99, 0.25);
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+/* ===== Полив карток ===== */
+.card-img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-img:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: -3px;
+}
+
+.card-img .emoji {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.card-img:hover .emoji {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.card-img .emoji.bounce {
+  animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.35) rotate(6deg); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+.hint {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.water-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #2d5a3d;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.drop {
+  position: absolute;
+  top: -24px;
+  font-size: 1.1rem;
+  pointer-events: none;
+  animation: drop-fall 0.9s ease-in forwards;
+}
+
+@keyframes drop-fall {
+  to {
+    top: 100%;
+    opacity: 0.2;
+  }
+}
+
+.add-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--green-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* ===== Мій садок ===== */
+.garden-hint {
+  max-width: 620px;
+  margin: -10px auto 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.garden-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.garden-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: pop-in 0.4s ease;
+}
+
+.garden-item.thirsty {
+  box-shadow: 0 0 0 3px #e8b04a, var(--shadow);
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.g-emoji {
+  font-size: 2.2rem;
+}
+
+.g-info {
+  flex: 1;
+  min-width: 140px;
+}
+
+.g-info small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.bar {
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: #e3ece5;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--green);
+  transition: width 0.6s ease, background 0.3s;
+}
+
+.bar-fill.low {
+  background: #e8863a;
+}
+
+.bar-fill.high {
+  background: #4aa3d8;
+}
+
+.g-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.water-btn,
+.remove-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.water-btn {
+  background: #4aa3d8;
+  color: #fff;
+}
+
+.water-btn:hover {
+  background: #2f88bd;
+  transform: translateY(-2px);
+}
+
+.remove-btn {
+  background: var(--green-light);
+  color: var(--muted);
+}
+
+.remove-btn:hover {
+  background: #f3d6d2;
+  color: #b3392c;
+}
+
+/* ===== Сповіщення ===== */
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 50;
+  max-width: 90vw;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #2d5a3d;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translate(-50%, 30px);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ===== Поява при прокрутці ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===== Кнопка «Нагору» ===== */
+#toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 40;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: #4c9a63;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.2s, background 0.2s;
+}
+
+#toTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#toTop:hover {
+  background: #2d5a3d;
+  transform: translateY(-3px);
+}
+
+/* ===== Для користувачів, яким заважає анімація ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
